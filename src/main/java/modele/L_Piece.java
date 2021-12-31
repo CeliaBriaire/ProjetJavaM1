@@ -2,41 +2,45 @@ package modele;
 
 public class L_Piece extends Piece {
 	
-	//constructeur
+	//Constructeur
 	public L_Piece (int i,int j,int orientation) {
 		super(i,j,orientation);
 		this.type=5;
+		typeLOrientation(orientation);
+	}
+	
+	
+	//Methodes 
+	public void typeLOrientation(int orientation) {
 		if(orientation==0) {
-			haut=true;
-			droite=true;
+			this.haut=true;
+			this.droite=true;
 			bas=false;
 			gauche=false;
-			unicode="╰";
-			linksImage=getClass().getResource("/images/Piece50.png");
+			this.unicode="╰";
+			this.linksImage=getClass().getResource("/images/Piece50.png");
 		}
 		else if (orientation==1) {
-			bas=true; 
-			droite=true;
+			this.bas=true; 
+			this.droite=true;
 			gauche=false;
 			haut=false;
-			unicode="╭";
-			linksImage=getClass().getResource("/images/Piece51.png");
+			this.unicode="╭";
+			this.linksImage=getClass().getResource("/images/Piece51.png");
 		}
 		else if (orientation==2) {
-			gauche=true; 
-			bas=true;
+			this.gauche=true; 
+			this.bas=true;
 			droite=false;
 			haut=false;
-			unicode="╮";
-			linksImage=getClass().getResource("/images/Piece52.png");
+			this.unicode="╮";
+			this.linksImage=getClass().getResource("/images/Piece52.png");
 		}
 		else {
-			haut=true;
-			gauche=true;
-			bas=false;
-			droite=false;
-			unicode="╯";
-			linksImage=getClass().getResource("/images/Piece53.png");
+			this.haut=true;
+			this.gauche=true;
+			this.unicode="╯";
+			this.linksImage=getClass().getResource("/images/Piece53.png");
 		}
 	}
 	
@@ -49,33 +53,6 @@ public class L_Piece extends Piece {
 	@Override
 	public void setOrientation(int orientation) {
 		super.setOrientation(orientation);
-		if(orientation==0) {
-			haut=true;
-			droite=true;
-			bas=false;
-			gauche=false;
-			unicode="╰";
-			linksImage=getClass().getResource("/images/Piece50.png");}
-		else if (orientation==1) {
-			bas=true; 
-			droite=true;
-			gauche=false;
-			haut=false;
-			unicode="╭";
-			linksImage=getClass().getResource("/images/Piece51.png");}
-		else if (orientation==2) {
-			gauche=true; 
-			bas=true;
-			droite=false;
-			haut=false;
-			unicode="╮";
-			linksImage=getClass().getResource("/images/Piece52.png");}
-		else {
-			haut=true;
-			gauche=true;
-			bas=false;
-			droite=false;
-			unicode="╯";
-			linksImage=getClass().getResource("/images/Piece53.png");}
+		typeLOrientation(orientation);
 	}
 }
