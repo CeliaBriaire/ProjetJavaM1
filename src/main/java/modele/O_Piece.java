@@ -2,30 +2,50 @@ package modele;
 
 public class O_Piece extends Piece {
 	
-	//constructeur
+	//Constructeur
 	public O_Piece (int i,int j,int orientation) {
 		super(i,j,orientation);
+		this.type=1;
+		typeOOrientation(orientation);
+	}
+	
+	
+	//Methodes
+	public void typeOOrientation(int orientation) {
 		if(orientation==0) {
 			haut=true;
+			bas=false;
+			droite=false;
+			gauche=false;
 			unicode="╹h";
 			linksImage=getClass().getResource("/images/Piece10.png");
 		}
 		else if (orientation==1) {
 			droite=true;
+			bas=false;
+			haut=false;
+			gauche=false;
 			unicode="d╺";
 			linksImage=getClass().getResource("/images/Piece11.png");
 		}
 		else if (orientation==2) {
 			bas=true;
+			droite=false;
+			haut=false;
+			gauche=false;
 			unicode="╻b";
 			linksImage=getClass().getResource("/images/Piece12.png");
 		}
 		else {
 			gauche=true;
+			droite=false;
+			bas=false;
+			haut=false;
 			unicode="╸g";
 			linksImage=getClass().getResource("/images/Piece13.png");
 		}
 	}
+	
 	
 	@Override
 	public void rotation() {
@@ -36,9 +56,6 @@ public class O_Piece extends Piece {
 	@Override
 	public void setOrientation(int orientation) {
 		super.setOrientation(orientation);
-		if(orientation==0) {this.unicode="╹h";linksImage=getClass().getResource("/images/Piece10.png");}
-		else if (orientation==1) {this.unicode="d╺";linksImage=getClass().getResource("/images/Piece11.png");}
-		else if (orientation==2) { this.unicode="╻b";linksImage=getClass().getResource("/images/Piece12.png");}
-		else {this.unicode="╸g";linksImage=getClass().getResource("/images/Piece13.png");}
+		typeOOrientation(orientation);
 	}
 }
