@@ -3,8 +3,8 @@ package modele;
 import java.net.URL;
 
 public class Piece {
-	private int i; //coordonnée i de la piece
-	private int j; //coordonnée j de la piece
+	private int i; //coordonnÃ©e i de la piece
+	private int j; //coordonnÃ©e j de la piece
 	protected int orientation; //orientation de la piece
 	protected boolean haut=false;
 	protected boolean bas=false;
@@ -12,6 +12,7 @@ public class Piece {
 	protected boolean gauche=false;
 	protected String unicode;
 	protected URL linksImage;
+	protected int type;
 	
 	
 	//constructeur
@@ -73,7 +74,7 @@ public class Piece {
 	}
 	
 	//Methodes
-	public void rotation(){ //tourne la piece de 90° dans le sens des aiguilles
+	public void rotation(){ //tourne la piece de 90Â° dans le sens des aiguilles
 		boolean tmp=haut;
 		haut=gauche;
 		gauche=bas;
