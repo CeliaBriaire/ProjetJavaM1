@@ -5,6 +5,11 @@ public class Empty_Piece extends Piece {
 	//contructeur
 	public Empty_Piece(int i,int j,int orientation) {
 		super(i,j,orientation);
+		this.type=0;
+		this.haut=false; 
+		this.gauche= false; 
+		this.droite=false; 
+		this.bas=false;
 		unicode=" ";
 		linksImage=getClass().getResource("/images/Piece00.png");
 	}
