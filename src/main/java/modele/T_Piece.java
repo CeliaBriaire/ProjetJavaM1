@@ -9,8 +9,6 @@ public class T_Piece extends Piece{
 		typeTOrientation(orientation);
 	}
 	
-	
-	//Methodes
 	public void typeTOrientation(int orientation) {
 		if(orientation==0) {
 			this.type=3;
@@ -47,7 +45,6 @@ public class T_Piece extends Piece{
 		}
 	}
 	
-	
 	@Override
 	public void rotation() {
 		super.rotation();
@@ -56,6 +53,7 @@ public class T_Piece extends Piece{
 	
 	@Override
 	public void setOrientation(int orientation) {
-		typeTOrientation(orientation);}
-	}
+		super.setOrientation(orientation);
+		typeTOrientation(orientation);
+		}
 }

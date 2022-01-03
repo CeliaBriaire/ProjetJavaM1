@@ -10,8 +10,8 @@ public class Empty_Piece extends Piece {
 		this.gauche= false; 
 		this.droite=false; 
 		this.bas=false;
-		unicode=" ";
-		linksImage=getClass().getResource("/images/Piece00.png");
+		this.unicode=" ";
+		this.linksImage=getClass().getResource("/images/Piece00.png");
 	}
 	
 	@Override

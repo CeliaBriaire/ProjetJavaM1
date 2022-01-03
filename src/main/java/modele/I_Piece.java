@@ -2,14 +2,13 @@ package modele;
 
 public class I_Piece extends Piece{
 	
-	//Constructeur
+	//constructeur
 	public I_Piece (int i,int j,int orientation) {
+		super(i,j,orientation);
 		this.type=2;
 		typeIOrientation(orientation);
 	}
 	
-	
-	//Methodes
 	public void typeIOrientation(int orientation) {
 		if(orientation==0) {
 			haut=true; 

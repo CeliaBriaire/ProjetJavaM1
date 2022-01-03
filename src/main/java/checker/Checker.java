@@ -28,8 +28,8 @@ public class Checker {
 	}
 	
 	public boolean isConnected(Piece p) {
-		int i=p.getI();
-		int j=p.getJ();
+		int i=p.getPosX();
+		int j=p.getPosY();
 		Piece p2=null;
 		if(j-1>=0) { //le cote gauche est connecte?
 			p2=this.game.board[i][j-1];

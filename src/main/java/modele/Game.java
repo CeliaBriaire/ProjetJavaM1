@@ -39,8 +39,7 @@ public class Game {
 		this.board=board;
 	}
 	
-	//Methodes
-	
+	//Methodes	
 	@Override
 	public String toString() {
 		String s="";

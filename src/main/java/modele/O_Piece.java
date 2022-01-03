@@ -2,15 +2,14 @@ package modele;
 
 public class O_Piece extends Piece {
 	
-	//Constructeur
+	//constructeur
 	public O_Piece (int i,int j,int orientation) {
 		super(i,j,orientation);
 		this.type=1;
 		typeOOrientation(orientation);
 	}
+
 	
-	
-	//Methodes
 	public void typeOOrientation(int orientation) {
 		if(orientation==0) {
 			haut=true;
@@ -57,5 +56,5 @@ public class O_Piece extends Piece {
 	public void setOrientation(int orientation) {
 		super.setOrientation(orientation);
 		typeOOrientation(orientation);
-	}
+		}
 }
