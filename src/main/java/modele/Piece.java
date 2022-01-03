@@ -1,6 +1,7 @@
 package modele;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Piece {
@@ -14,27 +15,27 @@ public class Piece {
 	protected  String unicode;
 	protected URL linksImage;
 	protected PieceType type;
-	//private LinkedList<Orientation> connectors;
-	//private ArrayList<Orientation> possibleOrientations;
+	private LinkedList<Orientation> connectors;
+	private ArrayList<Orientation> possibleOrientations;
 
-	//private boolean isFixed;
+	private boolean isFixed;
 	
 	
-	/*public Piece(int posY, int posX) {
+	public Piece(int posY, int posX) {
 		this.posX = posX;
 		this.posY = posY;
 		this.type = PieceType.VOID;
-		this.orientation = type.getOrientation(Orientation.NORTH);
+		this.orientation = Orientation.NORTH;
 		this.connectors = type.setConnectorsList(Orientation.NORTH);
-		//this.isFixed = false; // Is there any orientation for the piece
-		//this.possibleOrientations = type.getListOfPossibleOri();
+		this.isFixed = false; // Is there any orientation for the piece
+		this.possibleOrientations = type.getListOfPossibleOri();
 	}
 
 	public Piece(int posY, int posX, PieceType type, Orientation orientation) {
 		this.posX = posX;
 		this.posY = posY;
 		this.type = type;
-		this.orientation = type.getOrientation(orientation);
+		this.orientation = orientation;
 		this.connectors = type.setConnectorsList(orientation);
 		this.isFixed = false;
 		this.possibleOrientations = type.getListOfPossibleOri();
@@ -44,7 +45,7 @@ public class Piece {
 		this.posX = posX;
 		this.posY = posY;
 		this.type = PieceType.getTypefromValue(typeValue);
-		this.orientation = type.getOrientation(Orientation.getOrifromValue(orientationValue));
+		this.orientation = Orientation.getOrifromValue(orientationValue);
 		this.connectors = type.setConnectorsList(Orientation.getOrifromValue(orientationValue));
 		this.isFixed = false;
 		this.possibleOrientations = type.getListOfPossibleOri();
@@ -59,7 +60,7 @@ public class Piece {
 	}
 
 	public LinkedList<Orientation> getInvPossibleOrientation() {
-		LinkedList<Orientation> invPossibleOrientations = new LinkedList<>();
+		LinkedList<Orientation> invPossibleOrientations = new LinkedList<Orientation>();
 		for (Orientation ori : this.getPossibleOrientations()) {
 			invPossibleOrientations.addFirst(ori);
 		}
@@ -81,7 +82,7 @@ public class Piece {
 	}
 
 	public void setOrientation(int orientationValue) {
-		this.orientation = type.getOrientation(Orientation.getOrifromValue(orientationValue));
+		this.orientation = Orientation.getOrifromValue(orientationValue);
 		this.connectors = type.setConnectorsList(this.orientation);
 	}
 
@@ -100,6 +101,7 @@ public class Piece {
 	}
 
 	public boolean hasRightConnector() {
+		if(this.getConnectors()==null) return false;
 		for (Orientation ori : this.getConnectors()) {
 			if (ori == Orientation.EAST) {
 				return true;
@@ -128,9 +130,9 @@ public class Piece {
 
 	/**
 	 * Turn the piece 90° on the right and redefine the connectors's position
-	 
+	 */
 	public void turn() {
-		this.orientation = type.getOrientation(orientation.turn90());
+		this.orientation = orientation.turn90();
 		this.connectors = type.setConnectorsList(orientation);
 	}
 
@@ -143,7 +145,7 @@ public class Piece {
 		s += " Orientation / " + this.getOrientation();
 		return s;
 	}
-	 */
+	 
 	
 	
 	
@@ -207,18 +209,7 @@ public class Piece {
 	public void setType(PieceType type) {
 		this.type = type;
 	}
-	
-	public void setOrientation( int orientationValue) {
-		this.orientation=(Orientation) orientation.getOrifromValue(orientationValue);
-	}
-
-	/*public void setOrientation(int orientationValue) {
-		this.orientation = type.getOrientation(Orientation.getOrifromValue(orientationValue));
-		//this.connectors = type.setConnectorsList(this.orientation);
-	}*/
-	
-	
-	
+		
 	//Methodes
 	public void rotation(){ //tourne la piece de 90° dans le sens des aiguilles
 		boolean tmp=this.haut;

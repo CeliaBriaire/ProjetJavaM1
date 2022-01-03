@@ -2,8 +2,8 @@ package modele;
 
 public enum Orientation {
 	NORTH(0),  //==0
-	SOUTH(1),   //==1
-	EAST(2),   //==2
+	EAST(1),   //==1
+	SOUTH(2),   //==2
 	WEST(3);   //==3
 	
 	private int nbr;
@@ -20,7 +20,7 @@ public enum Orientation {
 		this.nbr = nbr;
 	}
 
-	Object getOrifromValue(int orientationValue) {
+	static Orientation getOrifromValue(int orientationValue) {
 		for (Orientation tmp : Orientation.values()) {
 			if(orientationValue==tmp.getNbr()) {
 				return tmp;
@@ -28,4 +28,20 @@ public enum Orientation {
 		}
 		return null;
 	}
+
+	Orientation turn90() {
+		if(this.getNbr()==Orientation.NORTH.nbr) {
+			return Orientation.EAST;
+		}
+		else if(this.getNbr()==Orientation.EAST.nbr) {
+			return Orientation.SOUTH;
+		}
+		else if(this.getNbr()==Orientation.SOUTH.nbr) {
+			return Orientation.WEST;
+		}
+		else {
+			return Orientation.NORTH;
+		}
+	}
+	
 }
