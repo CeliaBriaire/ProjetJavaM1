@@ -1,6 +1,7 @@
 package modele;
 
 import java.net.URL;
+import java.util.LinkedList;
 
 public class Piece {
 	private int posX; //coordonnée i de la piece
@@ -13,22 +14,20 @@ public class Piece {
 	protected  String unicode;
 	protected URL linksImage;
 	protected PieceType type;
-	//private PieceType type;
-	//private Orientation orientation;
 	//private LinkedList<Orientation> connectors;
 	//private ArrayList<Orientation> possibleOrientations;
 
 	//private boolean isFixed;
 	
-	/*
-	 * public Piece(int posY, int posX) {
+	
+	/*public Piece(int posY, int posX) {
 		this.posX = posX;
 		this.posY = posY;
 		this.type = PieceType.VOID;
 		this.orientation = type.getOrientation(Orientation.NORTH);
 		this.connectors = type.setConnectorsList(Orientation.NORTH);
-		this.isFixed = false; // Is there any orientation for the piece
-		this.possibleOrientations = type.getListOfPossibleOri();
+		//this.isFixed = false; // Is there any orientation for the piece
+		//this.possibleOrientations = type.getListOfPossibleOri();
 	}
 
 	public Piece(int posY, int posX, PieceType type, Orientation orientation) {

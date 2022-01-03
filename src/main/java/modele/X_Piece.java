@@ -5,7 +5,7 @@ public class X_Piece extends Piece {
 	//constructeur
 	public X_Piece(int i,int j,Orientation orientation) {
 		super(i,j,orientation);
-		this.type=PieceType.X;
+		this.type=PieceType.FOURCONN;
 		if(orientation.getNbr()==0) {
 			haut=true; 
 			gauche= true; 

@@ -5,7 +5,7 @@ public class L_Piece extends Piece {
 	//constructeur
 	public L_Piece (int i,int j,Orientation orientation) {
 		super(i,j,orientation);
-		this.type=PieceType.L;
+		this.type=PieceType.LTYPE;
 		typeLOrientation(orientation);
 	}
 	

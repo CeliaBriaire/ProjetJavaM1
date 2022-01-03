@@ -11,12 +11,12 @@ import java.util.LinkedList;
  * 
  */
 public enum PieceType {
-	I(2),
-	EMPTY(0),
-	L(6),
-	O(1),
-	T(3),
-	X(4);// Each Type has a number of connectors and a specific value
+	BAR(2),
+	VOID(0),
+	LTYPE(6),
+	ONECONN(1),
+	TTYPE(3),
+	FOURCONN(4);// Each Type has a number of connectors and a specific value
 	
 	private int nbr;
 	
@@ -40,5 +40,13 @@ public enum PieceType {
 		}
 		return null;
 	}
+	
+	/*public void getOrientation(Orientation orientation) {
+		if (this.nbr==0) {
+			
+		}
+		
+		
+	}*/
 
 }
