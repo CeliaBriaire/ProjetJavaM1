@@ -1,6 +1,13 @@
+package GUI;
+
+import java.net.URL;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
+import modele.Orientation;
 import modele.Piece;
+import modele.PieceType;
 
 
 /**
@@ -535,7 +542,42 @@ public class Grid {
 		}
 		return null;
 	}
+	
+	public ImageIcon getImageIcon(Piece p) {
+		if (p.getType()==PieceType.VOID) {
+			return new ImageIcon(getClass().getResource("/images/Piece00.png")); 
+		}
+		else if (p.getType()==PieceType.ONECONN) {
+			if (p.getOrientation()==Orientation.NORTH) return new ImageIcon((getClass().getResource("/images/Piece10.png")));
+			if (p.getOrientation()==Orientation.EAST) return new ImageIcon(getClass().getResource("/images/Piece11.png"));
+			if (p.getOrientation()==Orientation.SOUTH) return new ImageIcon(getClass().getResource("/images/Piece12.png"));
+			if (p.getOrientation()==Orientation.WEST) return new ImageIcon(getClass().getResource("/images/Piece13.png"));
+		}
+		else if (p.getType()==PieceType.BAR) {
+			if (p.getOrientation()==Orientation.NORTH) return new ImageIcon(getClass().getResource("/images/Piece20.png"));
+			if (p.getOrientation()==Orientation.EAST) return new ImageIcon(getClass().getResource("/images/Piece21.png"));
+		}
+		else if (p.getType()==PieceType.LTYPE) {
+			if (p.getOrientation()==Orientation.NORTH) return new ImageIcon(getClass().getResource("/images/Piece50.png"));
+			if (p.getOrientation()==Orientation.EAST) return new ImageIcon(getClass().getResource("/images/Piece51.png"));
+			if (p.getOrientation()==Orientation.SOUTH) return new ImageIcon(getClass().getResource("/images/Piece52.png"));
+			if (p.getOrientation()==Orientation.WEST) return new ImageIcon(getClass().getResource("/images/Piece53.png"));
+		}
+		else if (p.getType()==PieceType.TTYPE) {
+			if (p.getOrientation()==Orientation.NORTH) return new ImageIcon(getClass().getResource("/images/Piece30.png"));
+			if (p.getOrientation()==Orientation.EAST) return new ImageIcon(getClass().getResource("/images/Piece31.png"));
+			if (p.getOrientation()==Orientation.SOUTH) return new ImageIcon(getClass().getResource("/images/Piece32.png"));
+			if (p.getOrientation()==Orientation.WEST) return new ImageIcon(getClass().getResource("/images/Piece33.png"));
+		}
+		else {
+			return new ImageIcon(getClass().getResource("/images/Piece40.png"));
+		}
+		return null;
+	}
 
+	
+	
+	
 	@Override
 	public String toString() {
 

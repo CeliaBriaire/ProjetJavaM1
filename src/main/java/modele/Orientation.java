@@ -4,7 +4,8 @@ public enum Orientation {
 	NORTH(0),  //==0
 	EAST(1),   //==1
 	SOUTH(2),   //==2
-	WEST(3);   //==3
+	WEST(3),
+	EMPTY(4);   //==3
 	
 	private int nbr;
 	
@@ -31,15 +32,19 @@ public enum Orientation {
 
 	Orientation turn90() {
 		if(this.getNbr()==Orientation.NORTH.nbr) {
+			System.out.println("je suis ici");
 			return Orientation.EAST;
 		}
 		else if(this.getNbr()==Orientation.EAST.nbr) {
+			System.out.println("je suis ici 2");
 			return Orientation.SOUTH;
 		}
 		else if(this.getNbr()==Orientation.SOUTH.nbr) {
+			System.out.println("je suis ici 3");
 			return Orientation.WEST;
 		}
 		else {
+			System.out.println("je suis ici 4");
 			return Orientation.NORTH;
 		}
 	}

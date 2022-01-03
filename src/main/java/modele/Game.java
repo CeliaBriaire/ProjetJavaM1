@@ -1,5 +1,5 @@
 package modele;
-
+/*
 public class Game {
 	private int h;
 	private int w;
@@ -55,4 +55,4 @@ public class Game {
 	}
 	
 	
-}
+}*/

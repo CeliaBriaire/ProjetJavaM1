@@ -3,6 +3,7 @@ package modele;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Piece {
 	private int posX; //coordonnée i de la piece
@@ -35,7 +36,7 @@ public class Piece {
 		this.posX = posX;
 		this.posY = posY;
 		this.type = type;
-		this.orientation = orientation;
+		this.orientation = type.getOrientation(orientation);
 		this.connectors = type.setConnectorsList(orientation);
 		this.isFixed = false;
 		this.possibleOrientations = type.getListOfPossibleOri();
@@ -45,7 +46,7 @@ public class Piece {
 		this.posX = posX;
 		this.posY = posY;
 		this.type = PieceType.getTypefromValue(typeValue);
-		this.orientation = Orientation.getOrifromValue(orientationValue);
+		this.orientation = type.getOrientation(Orientation.getOrifromValue(orientationValue));
 		this.connectors = type.setConnectorsList(Orientation.getOrifromValue(orientationValue));
 		this.isFixed = false;
 		this.possibleOrientations = type.getListOfPossibleOri();
@@ -92,6 +93,9 @@ public class Piece {
 	}
 
 	public boolean hasTopConnector() {
+		if(this.getConnectors()==null) {
+			System.out.println("Null Top");
+			return false;}
 		for (Orientation ori : this.getConnectors()) {
 			if (ori == Orientation.NORTH) {
 				return true;
@@ -101,9 +105,12 @@ public class Piece {
 	}
 
 	public boolean hasRightConnector() {
-		if(this.getConnectors()==null) return false;
+		if(this.getConnectors()==null) {
+			System.out.println("Null Right");
+			return false;}
 		for (Orientation ori : this.getConnectors()) {
 			if (ori == Orientation.EAST) {
+				System.out.println("Connexion");
 				return true;
 			}
 		}
@@ -111,6 +118,9 @@ public class Piece {
 	}
 
 	public boolean hasBottomConnector() {
+		if(this.getConnectors()==null) {
+			System.out.println("Null Bottom");
+			return false;}
 		for (Orientation ori : this.getConnectors()) {
 			if (ori == Orientation.SOUTH) {
 				return true;
@@ -120,6 +130,9 @@ public class Piece {
 	}
 
 	public boolean hasLeftConnector() {
+		if(this.getConnectors()==null) {
+			System.out.println("Null Left");
+			return false;}
 		for (Orientation ori : this.getConnectors()) {
 			if (ori == Orientation.WEST) {
 				return true;
@@ -145,9 +158,6 @@ public class Piece {
 		s += " Orientation / " + this.getOrientation();
 		return s;
 	}
-	 
-	
-	
 	
 	//constructeur
 	public Piece(int i, int j, Orientation orientation) {
@@ -165,9 +175,6 @@ public class Piece {
 		return this.posY;
 	}
 	
-	public String getUnicode() {
-		return this.unicode;
-	}
 	
 	public PieceType getType() {
 		return type;
@@ -177,25 +184,6 @@ public class Piece {
 		return this.orientation;
 	}
 	
-	public boolean isHaut() {
-		return this.haut;
-	}
-
-	public boolean isBas() {
-		return this.bas;
-	}
-
-	public boolean isDroite() {
-		return this.droite;
-	}
-
-	public boolean isGauche() {
-		return this.gauche;
-	}
-	
-	public URL getLinksImage() {
-		return this.linksImage;
-	}
 
 	//Setter
 	public void setIPosX(int i) {
@@ -209,16 +197,5 @@ public class Piece {
 	public void setType(PieceType type) {
 		this.type = type;
 	}
-		
-	//Methodes
-	public void rotation(){ //tourne la piece de 90° dans le sens des aiguilles
-		boolean tmp=this.haut;
-		this.haut=this.gauche;
-		this.gauche=this.bas;
-		this.bas=this.droite;
-		this.droite=tmp;
-	}
-	
-	
 	
 }
