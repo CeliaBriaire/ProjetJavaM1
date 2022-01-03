@@ -1,14 +1,11 @@
-package fr.dauphine.JavaAvance.Solve;
+package solveur;
+
+
 
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Objects;
 
-import fr.dauphine.JavaAvance.Components.Orientation;
-import fr.dauphine.JavaAvance.Components.Pair;
-import fr.dauphine.JavaAvance.Components.Piece;
-import fr.dauphine.JavaAvance.Components.PieceType;
-import fr.dauphine.JavaAvance.GUI.Grid;
 
 public class Solver {
 

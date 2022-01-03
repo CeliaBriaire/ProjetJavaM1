@@ -1,4 +1,5 @@
-package fr.dauphine.JavaAvance.Components;
+package modele;
+
 
 import java.util.Objects;
 /**

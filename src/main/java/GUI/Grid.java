@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-import fr.dauphine.JavaAvance.Components.PieceType;
 import modele.Piece;
 
 

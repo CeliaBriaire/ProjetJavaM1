@@ -1,4 +1,5 @@
-package fr.dauphine.JavaAvance.GUI;
+package GUI;
+
 
 import java.io.IOException;
 import java.net.URL;

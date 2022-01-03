@@ -1,10 +1,12 @@
-package fr.dauphine.JavaAvance.GUI;
+package GUI;
+
 
 import java.util.EnumSet;
 import java.util.HashMap;
 
-import fr.dauphine.JavaAvance.Components.Orientation;
-import fr.dauphine.JavaAvance.Components.PieceType;
+import modele.Orientation;
+import modele.PieceType;
+
 
 /**
  * Singleton for building a correspondance table with type, orientation and

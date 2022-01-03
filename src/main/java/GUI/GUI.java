@@ -1,4 +1,6 @@
-package fr.dauphine.JavaAvance.GUI;
+package GUI;
+
+
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -12,10 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
-import fr.dauphine.JavaAvance.Components.Orientation;
-import fr.dauphine.JavaAvance.Components.Piece;
-import fr.dauphine.JavaAvance.Components.PieceType;
-import fr.dauphine.JavaAvance.Solve.Checker;
+import modele.Piece;
 
 /**
  * This class handles the GUI
