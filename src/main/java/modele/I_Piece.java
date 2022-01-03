@@ -3,14 +3,14 @@ package modele;
 public class I_Piece extends Piece{
 	
 	//constructeur
-	public I_Piece (int i,int j,int orientation) {
+	public I_Piece (int i,int j,Orientation orientation) {
 		super(i,j,orientation);
 		this.type=2;
 		typeIOrientation(orientation);
 	}
 	
-	public void typeIOrientation(int orientation) {
-		if(orientation==0) {
+	public void typeIOrientation(Orientation orientation) {
+		if(orientation.getNbr()==0) {
 			haut=true; 
 			bas= true;
 			gauche=false;
@@ -31,12 +31,12 @@ public class I_Piece extends Piece{
 	@Override
 	public void rotation() {
 		super.rotation();
-		this.setOrientation((this.orientation+1)%2);
+		this.setOrientation((this.getOrientation().getNbr()+1)%2);
 	}
 	
 	@Override
-	public void setOrientation(int orientation) {
-		super.setOrientation(orientation);
-		typeIOrientation(orientation);
+	public void setOrientation(int orientationValue) {
+		super.setOrientation(orientationValue);
+		typeIOrientation((Orientation) getOrientation().getOrifromValue(orientationValue));
 	}
 }

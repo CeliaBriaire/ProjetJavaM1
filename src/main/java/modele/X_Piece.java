@@ -3,10 +3,10 @@ package modele;
 public class X_Piece extends Piece {
 	
 	//constructeur
-	public X_Piece(int i,int j,int orientation) {
+	public X_Piece(int i,int j,Orientation orientation) {
 		super(i,j,orientation);
 		this.type=5;
-		if(orientation==0) {
+		if(orientation.getNbr()==0) {
 			haut=true; 
 			gauche= true; 
 			droite=true; 

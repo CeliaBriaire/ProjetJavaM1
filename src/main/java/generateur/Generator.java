@@ -11,6 +11,7 @@ import modele.Game;
 import modele.I_Piece;
 import modele.L_Piece;
 import modele.O_Piece;
+import modele.Orientation;
 import modele.Piece;
 import modele.T_Piece;
 import modele.X_Piece;
@@ -82,47 +83,47 @@ public class Generator {
 	
 	//Methodes
 	public Piece[] hautGauche() { //ensemble des pieces possibles pour le coin en haut à gauche
-		Piece hautGauche[] = { new Empty_Piece(0, 0, 0),new L_Piece(0, 0, 1), new O_Piece(0, 0, 1), new O_Piece(0, 0, 2) };
+		Piece hautGauche[] = { new Empty_Piece(0, 0, Orientation.NORTH),new L_Piece(0, 0, Orientation.SOUTH), new O_Piece(0, 0, Orientation.SOUTH), new O_Piece(0, 0, Orientation.EAST) };
 		return hautGauche;
 	}
 	
 	public Piece[] hautDroit(int i, int j) {
-		Piece hautDroit[]= { new Empty_Piece(i, j, 0), new L_Piece(i,j,2), new O_Piece(i,j,3), new O_Piece(i,j,2)};
+		Piece hautDroit[]= { new Empty_Piece(i, j, Orientation.NORTH), new L_Piece(i,j,Orientation.EAST), new O_Piece(i,j,Orientation.WEST), new O_Piece(i,j,Orientation.EAST)};
 		return hautDroit;
 	}
 	
 	public Piece[] basGauche(int i,int j) {
-		Piece basGauche[]= { new Empty_Piece(i,j,0), new L_Piece(i,j,0), new O_Piece(i,j,0), new O_Piece(i,j,1)};
+		Piece basGauche[]= { new Empty_Piece(i,j,Orientation.NORTH), new L_Piece(i,j,Orientation.NORTH), new O_Piece(i,j,Orientation.NORTH), new O_Piece(i,j,Orientation.SOUTH)};
 		return basGauche;
 	}
 	
 	public Piece[] basDroit(int i, int j) {
-		Piece basDroit[]= { new Empty_Piece(i,j,0), new L_Piece(i,j,3), new O_Piece(i,j,0), new O_Piece(i,j,3)};
+		Piece basDroit[]= { new Empty_Piece(i,j,Orientation.NORTH), new L_Piece(i,j,Orientation.WEST), new O_Piece(i,j,Orientation.NORTH), new O_Piece(i,j,Orientation.WEST)};
 		return basDroit;
 	}
 	
 	public Piece[] haut(int i, int j) {
-		Piece haut[]= { new Empty_Piece(i,j,0), new I_Piece(i,j,1), new L_Piece(i,j,1), new L_Piece(i,j,2), new O_Piece(i,j,1), new O_Piece(i,j,3), new O_Piece(i,j,2), new T_Piece(i,j,2)};
+		Piece haut[]= { new Empty_Piece(i,j,Orientation.NORTH), new I_Piece(i,j,Orientation.SOUTH), new L_Piece(i,j,Orientation.SOUTH), new L_Piece(i,j,Orientation.EAST), new O_Piece(i,j,Orientation.SOUTH), new O_Piece(i,j,Orientation.WEST), new O_Piece(i,j,Orientation.EAST), new T_Piece(i,j,Orientation.EAST)};
 		return haut;
 	}
 	
 	public Piece[] gauche(int i,int j) {
-		Piece gauche[]= { new Empty_Piece(i,j,0), new I_Piece(i,j,0), new L_Piece(i,j,0), new L_Piece(i,j,1), new O_Piece(i,j,1), new O_Piece(i,j,0), new O_Piece(i,j,2), new T_Piece(i,j,1)};
+		Piece gauche[]= { new Empty_Piece(i,j,Orientation.NORTH), new I_Piece(i,j,Orientation.NORTH), new L_Piece(i,j,Orientation.NORTH), new L_Piece(i,j,Orientation.SOUTH), new O_Piece(i,j,Orientation.SOUTH), new O_Piece(i,j,Orientation.NORTH), new O_Piece(i,j,Orientation.EAST), new T_Piece(i,j,Orientation.SOUTH)};
 		return gauche;
 	}
 	
 	public Piece[] droite(int i, int j) {
-		Piece droite[]= { new Empty_Piece(i,j,0), new I_Piece(i,j,0), new L_Piece(i,j,2), new L_Piece(i,j,3), new O_Piece(i,j,3), new O_Piece(i,j,0), new O_Piece(i,j,2), new T_Piece(i,j,3)};
+		Piece droite[]= { new Empty_Piece(i,j,Orientation.NORTH), new I_Piece(i,j,Orientation.NORTH), new L_Piece(i,j,Orientation.EAST), new L_Piece(i,j,Orientation.WEST), new O_Piece(i,j,Orientation.WEST), new O_Piece(i,j,Orientation.NORTH), new O_Piece(i,j,Orientation.EAST), new T_Piece(i,j,Orientation.WEST)};
 		return droite;
 	}
 	
 	public Piece[] bas(int i,int j){
-		Piece bas[]={ new Empty_Piece(i,j,0), new I_Piece(i,j,1), new L_Piece(i,j,0), new L_Piece(i,j,3), new O_Piece(i,j,1), new O_Piece(i,j,3), new O_Piece(i,j,3), new T_Piece(i,j,0)};
+		Piece bas[]={ new Empty_Piece(i,j,Orientation.NORTH), new I_Piece(i,j,Orientation.SOUTH), new L_Piece(i,j,Orientation.NORTH), new L_Piece(i,j,Orientation.WEST), new O_Piece(i,j,Orientation.SOUTH), new O_Piece(i,j,Orientation.WEST), new O_Piece(i,j,Orientation.WEST), new T_Piece(i,j,Orientation.NORTH)};
 		return bas;
 	}
 	
 	public Piece[] milieu(int i, int j) {
-		Piece milieu[]= {  new Empty_Piece(i,j,0), new I_Piece(i,j,0), new I_Piece(i,j,1), new L_Piece(i,j,0), new L_Piece(i,j,1), new L_Piece(i,j,2), new L_Piece(i,j,3), new O_Piece(i,j,1), new O_Piece(i,j,3), new O_Piece(i,j,0), new O_Piece(i,j,2), new T_Piece(i,j,0),new T_Piece(i,j,1),new T_Piece(i,j,2),new T_Piece(i,j,3), new X_Piece(i,j,0)};
+		Piece milieu[]= {  new Empty_Piece(i,j,Orientation.NORTH), new I_Piece(i,j,Orientation.NORTH), new I_Piece(i,j,Orientation.SOUTH), new L_Piece(i,j,Orientation.NORTH), new L_Piece(i,j,Orientation.SOUTH), new L_Piece(i,j,Orientation.EAST), new L_Piece(i,j,Orientation.WEST), new O_Piece(i,j,Orientation.SOUTH), new O_Piece(i,j,Orientation.WEST), new O_Piece(i,j,Orientation.NORTH), new O_Piece(i,j,Orientation.EAST), new T_Piece(i,j,Orientation.NORTH),new T_Piece(i,j,Orientation.SOUTH),new T_Piece(i,j,Orientation.EAST),new T_Piece(i,j,Orientation.WEST), new X_Piece(i,j,Orientation.NORTH)};
 		return milieu;
 	}
 	

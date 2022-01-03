@@ -5,7 +5,7 @@ import java.net.URL;
 public class Piece {
 	private int posX; //coordonnée i de la piece
 	private int posY; //coordonnée j de la piece
-	protected int orientation; //orientation de la piece
+	private Orientation orientation; //orientation de la piece
 	protected boolean haut;
 	protected boolean bas;
 	protected boolean droite;
@@ -95,9 +95,6 @@ public class Piece {
 		this.connectors = type.setConnectorsList(this.orientation);
 	}
 
-	public Orientation getOrientation() {
-		return orientation;
-	}
 
 	public LinkedList<Orientation> getConnectors() {
 		return connectors;
@@ -161,7 +158,7 @@ public class Piece {
 	
 	
 	//constructeur
-	public Piece(int i, int j, int orientation) {
+	public Piece(int i, int j, Orientation orientation) {
 		this.posX=i;
 		this.posY=j;
 		this.orientation=orientation;
@@ -181,8 +178,12 @@ public class Piece {
 	}
 
 
-	public int getOrientation() {
+	public Orientation getOrientation() {
 		return this.orientation;
+	}
+	
+	public void setOrientation( int orientationValue) {
+		this.orientation=(Orientation) orientation.getOrifromValue(orientationValue);
 	}
 	
 	public boolean isHaut() {
@@ -214,9 +215,12 @@ public class Piece {
 		this.posY=j;
 	}
 
-	public void setOrientation(int orientation) {
-		this.orientation=orientation;
-	}
+	/*public void setOrientation(int orientationValue) {
+		this.orientation = type.getOrientation(Orientation.getOrifromValue(orientationValue));
+		//this.connectors = type.setConnectorsList(this.orientation);
+	}*/
+	
+	
 	
 	//Methodes
 	public void rotation(){ //tourne la piece de 90° dans le sens des aiguilles

@@ -3,14 +3,14 @@ package modele;
 public class L_Piece extends Piece {
 	
 	//constructeur
-	public L_Piece (int i,int j,int orientation) {
+	public L_Piece (int i,int j,Orientation orientation) {
 		super(i,j,orientation);
 		this.type=5;
 		typeLOrientation(orientation);
 	}
 	
-	public void typeLOrientation(int orientation) {
-		if(orientation==0) {
+	public void typeLOrientation(Orientation orientation) {
+		if(orientation.getNbr()==0) {
 			this.haut=true;
 			this.droite=true;
 			bas=false;
@@ -18,7 +18,7 @@ public class L_Piece extends Piece {
 			this.unicode="╰";
 			this.linksImage=getClass().getResource("/images/Piece50.png");
 		}
-		else if (orientation==1) {
+		else if (orientation.getNbr()==1) {
 			this.bas=true; 
 			this.droite=true;
 			gauche=false;
@@ -26,7 +26,7 @@ public class L_Piece extends Piece {
 			this.unicode="╭";
 			this.linksImage=getClass().getResource("/images/Piece51.png");
 		}
-		else if (orientation==2) {
+		else if (orientation.getNbr()==2) {
 			this.gauche=true; 
 			this.bas=true;
 			droite=false;
@@ -45,12 +45,12 @@ public class L_Piece extends Piece {
 	@Override
 	public void rotation() {
 		super.rotation();
-		this.setOrientation((orientation+1)%4);
+		this.setOrientation((getOrientation().getNbr()+1)%4);
 	}
 	
 	@Override
-	public void setOrientation(int orientation) {
-		super.setOrientation(orientation);
-		typeLOrientation(orientation);
-		}
+	public void setOrientation(int orientationValue) {
+		super.setOrientation(orientationValue);
+		typeLOrientation((Orientation) getOrientation().getOrifromValue(orientationValue));
+	}
 }
