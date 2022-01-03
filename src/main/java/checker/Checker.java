@@ -27,7 +27,7 @@ public class Checker {
 		return true;
 	}
 	
-	public boolean isConnected(Piece p) {
+	public boolean isConnected(Piece p) { //fonctionner avant, bug maintenant?
 		int i=p.getPosX();
 		int j=p.getPosY();
 		Piece p2=null;

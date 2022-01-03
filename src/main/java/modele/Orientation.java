@@ -48,5 +48,10 @@ public enum Orientation {
 			return Orientation.NORTH;
 		}
 	}
+
+	int[] getOpposedPieceCoordinates(Piece p) {
+		
+		return null;
+	}
 	
 }
