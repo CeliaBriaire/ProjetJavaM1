@@ -6,6 +6,9 @@ import java.awt.event.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import checker.Checker;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
