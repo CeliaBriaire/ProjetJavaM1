@@ -31,7 +31,7 @@ public class Generator {
 	//Setter
 	
 	//Methodes
-	public Piece[] hautGauche() { //ensemble des pieces possibles pour le coin en haut Ã  gauche
+	public Piece[] hautGauche() { //ensemble des pieces possibles pour le coin en haut à gauche
 		Piece hautGauche[] = { new Empty_Piece(0, 0, 0),new L_Piece(0, 0, 1), new O_Piece(0, 0, 1), new O_Piece(0, 0, 2) };
 		return hautGauche;
 	}
@@ -326,12 +326,12 @@ public class Generator {
 		Random rand = new Random();
 	}*/
 	
-	public void generate() { //genere un jeu solvable
+	public void generate() {
 		this.generateInitBoard();
 		this.mixed(this.game);
 	}
 
-	private void mixed(Game game) { //tourne toutes les pieces de maniere aleatoire
+	private void mixed(Game game) {
 		for (Piece[] pBoard : game.getBoard()) {
 			for (Piece p : pBoard) {
 				for (int i=0; i<new Random().nextInt(3); i++)
@@ -340,9 +340,9 @@ public class Generator {
 		}
 	}
 	
-	public static void main(String[] args) throws IOException {  
-		Piece[][] board = new Piece[8][8];
-		Game game=new Game(8,8,board);
+	public static void main(String[] args) throws IOException {
+		Piece[][] board = new Piece[6][6];
+		Game game=new Game(6,6,board);
 		Generator generator=new Generator(game);
 		generator.generate();
 		FrmLoop frame = new FrmLoop(game);
