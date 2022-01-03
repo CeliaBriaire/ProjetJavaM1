@@ -5,7 +5,7 @@ public class I_Piece extends Piece{
 	//constructeur
 	public I_Piece (int i,int j,Orientation orientation) {
 		super(i,j,orientation);
-		this.type=2;
+		this.type=PieceType.I;
 		typeIOrientation(orientation);
 	}
 	

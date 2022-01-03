@@ -5,13 +5,13 @@ public class T_Piece extends Piece{
 	//Constructeur
 	public T_Piece(int i,int j,Orientation orientation) {
 		super(i,j,orientation);
-		this.type=3;
+		this.type=PieceType.T;
 		typeTOrientation(orientation);
 	}
 	
 	public void typeTOrientation(Orientation orientation) {
 		if(orientation.getNbr()==0) {
-			this.type=3;
+			this.type=PieceType.T;
 			haut=true; 
 			gauche=true; 
 			droite=true;

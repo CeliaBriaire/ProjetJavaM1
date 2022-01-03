@@ -12,7 +12,7 @@ public class Piece {
 	protected boolean gauche;
 	protected  String unicode;
 	protected URL linksImage;
-	protected int type;
+	protected PieceType type;
 	//private PieceType type;
 	//private Orientation orientation;
 	//private LinkedList<Orientation> connectors;
@@ -79,15 +79,6 @@ public class Piece {
 
 	public boolean isFixed() {
 		return isFixed;
-	}
-
-
-	public PieceType getType() {
-		return type;
-	}
-
-	public void setType(PieceType type) {
-		this.type = type;
 	}
 
 	public void setOrientation(int orientationValue) {
@@ -176,14 +167,13 @@ public class Piece {
 	public String getUnicode() {
 		return this.unicode;
 	}
-
+	
+	public PieceType getType() {
+		return type;
+	}
 
 	public Orientation getOrientation() {
 		return this.orientation;
-	}
-	
-	public void setOrientation( int orientationValue) {
-		this.orientation=(Orientation) orientation.getOrifromValue(orientationValue);
 	}
 	
 	public boolean isHaut() {
@@ -213,6 +203,14 @@ public class Piece {
 
 	public void setPosY(int j) {
 		this.posY=j;
+	}
+	
+	public void setType(PieceType type) {
+		this.type = type;
+	}
+	
+	public void setOrientation( int orientationValue) {
+		this.orientation=(Orientation) orientation.getOrifromValue(orientationValue);
 	}
 
 	/*public void setOrientation(int orientationValue) {

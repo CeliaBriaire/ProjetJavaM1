@@ -3,6 +3,7 @@ package modele;
 public class Game {
 	private int h;
 	private int w;
+	private int nbcc = -1;
 	public Piece[][] board;
 	
 	//constructeurs
